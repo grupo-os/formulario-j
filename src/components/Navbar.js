@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/bootstrap-logo.svg"
+
 
 const Navbar = () => {
   return (
