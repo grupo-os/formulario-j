@@ -47,13 +47,6 @@ const FormularioProductos = () => {
             <label for="inputCity">Precio</label>
             <input type="number" className="form-control" id="precio" />
           </div>
-          {/* <div className="form-group col-md-4">
-            <label for="inputState">descuento</label>
-            <select id="descuento" className="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div> */}
           <div className="form-group col-md-2">
             <label for="inputZip">Descuento</label>
             <input type="number" className="form-control" id="decuento" />
@@ -64,16 +57,6 @@ const FormularioProductos = () => {
           </div>
         </div>
         <div className="form-group">
- {/*          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              id="gridCheck"
-            />
-            <label className="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div> */}
         </div>
         <button type="submit" className="btn btn-primary">
           Sign in
