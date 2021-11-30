@@ -36,6 +36,11 @@ const Navbar = () => {
                   Formulario
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="./editar">
+                  Editar Producto
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
