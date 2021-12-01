@@ -183,7 +183,7 @@ const FormularioProductos = () => {
               }}
             />
           </div>
-          <div className="form-group col-md-6">
+          <div className="form-group col-md-12">
             <label for="inputZip">Stock</label>
             <input
               type="number"
@@ -199,10 +199,15 @@ const FormularioProductos = () => {
           className="btn btn-warning col-md-12"
           disabled={habilitado ? false : true}
           onClick={(e) => {
-            enviarD(e.preventDefault());
+            enviarD(e.preventDefault()); function mensaje() {
+              console.log("hola desde javascript");
+              <Link to='/home'>Enviar</Link>   
+             }
+              
+             setTimeout(mensaje,5000);
           }}
         >
-          {habilitado ?<Link to='/home'>Enviar</Link>:"Deshabilitado"}
+          {habilitado ?"Enviar":"Deshabilitado"}
         </button>
         </div>
       </form>
