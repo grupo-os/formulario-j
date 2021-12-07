@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo2.png";
 
 const FormularioProductos = () => {
   let schemaProductos = yup.object().shape({
@@ -87,130 +88,136 @@ const FormularioProductos = () => {
 
   return (
     <div>
-      <form>
-        <div className="form-row mx-auto col-md-8">
-          <div className="form-group col-md-12">
-            <label for="inputEmail4">Nombre de la farmacia</label>
+      <main className="form-signin mx-auto w-25 my-5">
+        <form>
+          <div className="row mx-auto w-25 my-5">
+          <img className="mb-4" src={logo} alt="" width="25" height="45" />
+          </div>
+          <div className="form-row mx-auto col-md-12">
+          <h3>Formulario de productos</h3>
+            <div className="form-group col-md-12">
+              <label for="inputEmail4">Nombre de la farmacia</label>
+              <input
+                type="text"
+                className="form-control"
+                id="nombreF"
+                placeholder="Farmacia"
+                onChange={(e) => {
+                  setNomFarmacia(e.target.value);
+                }}
+              />
+            </div>
+            <div className="form-group col-md-12">
+              <label for="inputPassword4">nombre del producto</label>
+              <input
+                type="text"
+                className="form-control"
+                id="producto"
+                placeholder="Producto"
+                onChange={(e) => {
+                  setNomProducto(e.target.value);
+                }}
+              />
+            </div>
+            <div className="form-group col-md-12">
+              <label for="inputEmail4">Nombre generico</label>
+              <input
+                type="text"
+                className="form-control"
+                id="nombreGen"
+                placeholder="nombre generico"
+                onChange={(e) => {
+                  setNomProductoGen(e.target.value);
+                }}
+              />
+            </div>
+            <div className="form-group col-md-12">
+              <label for="inputEmail4">codigo de producto</label>
+              <input
+                type="number"
+                className="form-control"
+                id="codProd"
+                placeholder="codigo de producto"
+                onChange={(e) => {
+                  setCodigoProducto(e.target.value);
+                }}
+              />
+            </div>
+            <div className="form-group col-md-12">
+            <label for="inputAddress">link de imagen</label>
             <input
               type="text"
               className="form-control"
-              id="nombreF"
-              placeholder="Farmacia"
+              id="imagen"
+              placeholder="ingrese el link de la imagen"
               onChange={(e) => {
-                setNomFarmacia(e.target.value);
+                setImagen(e.target.value);
               }}
             />
           </div>
           <div className="form-group col-md-12">
-            <label for="inputPassword4">nombre del producto</label>
+            <label for="inputAddress2">descripcion</label>
             <input
               type="text"
               className="form-control"
-              id="producto"
-              placeholder="Producto"
+              id="descrip"
+              placeholder="detalles"
               onChange={(e) => {
-                setNomProducto(e.target.value);
+                setDescrip(e.target.value);
               }}
             />
           </div>
-          <div className="form-group col-md-12">
-            <label for="inputEmail4">Nombre generico</label>
-            <input
-              type="text"
-              className="form-control"
-              id="nombreGen"
-              placeholder="nombre generico"
-              onChange={(e) => {
-                setNomProductoGen(e.target.value);
-              }}
-            />
-          </div>
-          <div className="form-group col-md-12">
-            <label for="inputEmail4">codigo de producto</label>
-            <input
-              type="number"
-              className="form-control"
-              id="codProd"
-              placeholder="codigo de producto"
-              onChange={(e) => {
-                setCodigoProducto(e.target.value);
-              }}
-            />
-          </div>
-          <div className="form-group col-md-12">
-          <label for="inputAddress">imagen(?)</label>
-          <input
-            type="text"
-            className="form-control"
-            id="imagen"
-            placeholder="ingrese el link de la imagen"
-            onChange={(e) => {
-              setImagen(e.target.value);
+            <div className="form-group col-md-12">
+              <label for="inputCity">Precio</label>
+              <input
+                type="number"
+                className="form-control"
+                id="precio"
+                onChange={(e) => {
+                  setPrecio(e.target.value);
+                }}
+              />
+            </div>
+            <div className="form-group col-md-12">
+              <label for="inputZip">Descuento</label>
+              <input
+                type="number"
+                className="form-control"
+                id="decuento"
+                onChange={(e) => {
+                  setDescuento(e.target.value);
+                }}
+              />
+            </div>
+            <div className="form-group col-md-12">
+              <label for="inputZip">Stock</label>
+              <input
+                type="number"
+                className="form-control"
+                id="stock"
+                onChange={(e) => {
+                  setStock(e.target.value);
+                }}
+              />
+            </div>
+            <button
+            type="submit"
+            className="btn btn-warning col-md-12"
+            disabled={habilitado ? false : true}
+            onClick={(e) => {
+              enviarD(e.preventDefault()); function mensaje() {
+                console.log("hola desde javascript");
+                <Link to='/home'>Enviar</Link>
+               }
+        
+               setTimeout(mensaje,5000);
             }}
-          />
-        </div>
-        <div className="form-group col-md-12">
-          <label for="inputAddress2">descripcion</label>
-          <input
-            type="text"
-            className="form-control"
-            id="descrip"
-            placeholder="detalles"
-            onChange={(e) => {
-              setDescrip(e.target.value);
-            }}
-          />
-        </div>
-          <div className="form-group col-md-12">
-            <label for="inputCity">Precio</label>
-            <input
-              type="number"
-              className="form-control"
-              id="precio"
-              onChange={(e) => {
-                setPrecio(e.target.value);
-              }}
-            />
+          >
+            {habilitado ?"Enviar":"Deshabilitado"}
+          </button>
           </div>
-          <div className="form-group col-md-12">
-            <label for="inputZip">Descuento</label>
-            <input
-              type="number"
-              className="form-control"
-              id="decuento"
-              onChange={(e) => {
-                setDescuento(e.target.value);
-              }}
-            />
-          </div>
-          <div className="form-group col-md-12">
-            <label for="inputZip">Stock</label>
-            <input
-              type="number"
-              className="form-control"
-              id="stock"
-              onChange={(e) => {
-                setStock(e.target.value);
-              }}
-            />
-          </div>
-          <button
-          type="submit"
-          className="btn btn-warning col-md-12"
-          disabled={habilitado ? false : true}
-          onClick={(e) => {
-            enviarD(e.preventDefault()); function mensaje() {
-              console.log("hola desde javascript");
-              <Link to='/home'>Enviar</Link>   
-             }
-              
-             setTimeout(mensaje,5000);
-          }}
-        >
-          {habilitado ?"Enviar":"Deshabilitado"}
-        </button>
-        </div>
-      </form>
+        </form>
+      </main>
     </div>
   );
 };
